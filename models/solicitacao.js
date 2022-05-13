@@ -1,26 +1,26 @@
 import db from "../sql/sequelize.js";
 import { DataTypes } from "sequelize";
-import Solicitacao from "./solicitacao.js";
 
-const Servico = db.define(
-  "servicos",
+const Solicitacao = db.define(
+  "solicitacoes",
   {
-    servico_id: {
+    solicitacao_id: {
       type: DataTypes.STRING,
       allowNull: false,
       primaryKey: true,
     },
-    descricao: {
+    cliente_id: {
       type: DataTypes.STRING,
       allowNull: false,
+      foreignKey: "cliente_id",
     },
-    preco: {
-      type: DataTypes.DECIMAL,
-      allowNull: false,
-    },
-    materiais: {
+    profissional_id: {
       type: DataTypes.STRING,
-      allowNull: false,
+      foreignKey: "profissional_id",
+    },
+    servico_id: {
+      type: DataTypes.STRING,
+      foreignKey: "servico_id",
     },
   },
   {
@@ -32,6 +32,4 @@ const Servico = db.define(
   }
 );
 
-Servico.hasMany(Solicitacao);
-
-export default Servico;
+export default Solicitacao;

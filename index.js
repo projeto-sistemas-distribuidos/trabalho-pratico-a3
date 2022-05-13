@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
-import routeClient from "./routes/profissional.js";
+import routeProfissional from "./routes/profissional.js";
+import routeServico from "./routes/servico.js";
 
 
 const app = express();
@@ -10,8 +11,8 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json())
 
-routeClient(app);
-
+routeProfissional(app);
+routeServico(app);
 
 
 app.listen("4000", () =>{

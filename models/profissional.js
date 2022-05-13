@@ -1,5 +1,6 @@
 import db from "../sql/sequelize.js";
 import { DataTypes } from "sequelize";
+import Solicitacao from "./solicitacao.js";
 
 const Profissional = db.define(
   "profissionais",
@@ -48,5 +49,7 @@ const Profissional = db.define(
     updatedAt: false,
   }
 );
+
+Profissional.hasMany(Solicitacao);
 
 export default Profissional;

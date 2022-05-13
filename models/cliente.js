@@ -1,5 +1,6 @@
 import db from "../sql/sequelize.js";
 import { DataTypes } from "sequelize";
+import Solicitacao from "./solicitacao.js";
 
 const Cliente = db.define(
   "clientes",
@@ -50,5 +51,7 @@ const Cliente = db.define(
     updatedAt: false,
   }
 );
+
+Cliente.hasMany(Solicitacao);
 
 export default Cliente;
