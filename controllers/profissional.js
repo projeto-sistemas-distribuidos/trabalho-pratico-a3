@@ -4,8 +4,8 @@ import { v4 as uuidv4 } from "uuid";
 const controller = {
   get(req, res) {
     profissionalRepository.findAll()
-      .then( (result) => res.json(result))
-      .catch((err) => res.status(400).json(err.message));
+      .then( (result) => res.status(200).json(result))
+      .catch((err) => res.status(400).json({ 'error': err.message }));
   },
 
   postProfissional(req, res) {
@@ -26,7 +26,7 @@ const controller = {
         descricao: req.body.descricao,
       })
       .then((result) => res.status(201).json(result))
-      .catch((err) => res.status(404).json(err))
+      .catch((err) => res.status(400).json({ 'error': err.message }))
   },
 };
 
