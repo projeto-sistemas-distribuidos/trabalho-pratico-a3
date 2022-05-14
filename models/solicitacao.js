@@ -8,20 +8,7 @@ const Solicitacao = db.define(
       type: DataTypes.STRING,
       allowNull: false,
       primaryKey: true,
-    },
-    cliente_id: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      foreignKey: "cliente_id",
-    },
-    profissional_id: {
-      type: DataTypes.STRING,
-      foreignKey: "profissional_id",
-    },
-    servico_id: {
-      type: DataTypes.STRING,
-      foreignKey: "servico_id",
-    },
+    }
   },
   {
     timestamps: false,

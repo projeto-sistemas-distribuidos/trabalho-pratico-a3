@@ -32,6 +32,7 @@ const Servico = db.define(
   }
 );
 
-Servico.hasMany(Solicitacao, {as: "solicitacoes"});
+
+Solicitacao.belongsTo(Servico, {foreignKey: "servico_id"});
 
 export default Servico;

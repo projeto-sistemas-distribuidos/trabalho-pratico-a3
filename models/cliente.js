@@ -52,6 +52,6 @@ const Cliente = db.define(
   }
 );
 
-Cliente.hasMany(Solicitacao, {as: "solicitacoes"});
+Solicitacao.belongsTo(Cliente, {foreignKey: "cliente_id"});
 
 export default Cliente;

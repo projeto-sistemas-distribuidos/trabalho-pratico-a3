@@ -50,6 +50,7 @@ const Profissional = db.define(
   }
 );
 
-Profissional.hasMany(Solicitacao, {as: "solicitacoes"});
+
+Solicitacao.belongsTo(Profissional, {foreignKey: "profissional_id"});
 
 export default Profissional;
