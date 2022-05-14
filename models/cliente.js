@@ -52,7 +52,6 @@ const Cliente = db.define(
   }
 );
 
-Cliente.hasMany(Solicitacao);
-Solicitacao.hasOne(Cliente);
+Cliente.hasMany(Solicitacao, {as: "solicitacoes"});
 
 export default Cliente;

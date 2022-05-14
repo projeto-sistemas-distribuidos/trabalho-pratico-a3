@@ -32,7 +32,6 @@ const Servico = db.define(
   }
 );
 
-Servico.hasMany(Solicitacao);
-Solicitacao.hasOne(Servico);
+Servico.hasMany(Solicitacao, {as: "solicitacoes"});
 
 export default Servico;

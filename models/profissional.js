@@ -50,7 +50,6 @@ const Profissional = db.define(
   }
 );
 
-Profissional.hasMany(Solicitacao);
-Solicitacao.hasOne(Profissional);
+Profissional.hasMany(Solicitacao, {as: "solicitacoes"});
 
 export default Profissional;
