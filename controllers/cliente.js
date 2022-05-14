@@ -1,36 +1,26 @@
-import profissionalRepository from "../models/profissional.js";
+import clienteRepository from "../models/cliente.js";
 import { v4 as uuidv4 } from "uuid";
 
 const controller = {
   get(req, res) {
-    profissionalRepository
+    clienteRepository
       .findAll()
       .then((result) => res.status(200).json(result))
       .catch((err) => res.status(400).json({ error: err.message }));
   },
-
-  getId(req, res) {
-    profissionalRepository
-      .findByPk(req.params.id)
-      .then((result) => res.status(200).json(result))
-      .catch((err) => res.status(400).json({ error: err.message }));
-  },
-
-  postProfissional(req, res) {
+  postCliente(req, res) {
     const id = uuidv4();
-    profissionalRepository
+    clienteRepository
       .create({
-        profissional_id: `pro:${id}`,
+        cliente_id: `cli:${id}`,
         nome: req.body.nome,
-        cpf_cnpj: req.body.cpf_cnpj,
+        cpf: req.body.cpf,
         endereco: req.body.endereco,
         sexo: req.body.sexo,
         telefone: req.body.telefone,
         idade: req.body.idade,
         email: req.body.email,
         senha: req.body.senha,
-        area_atuacao: req.body.area_atuacao,
-        descricao: req.body.descricao,
       })
       .then((result) => res.status(201).json(result))
       .catch((err) => res.status(400).json({ error: err.message }));

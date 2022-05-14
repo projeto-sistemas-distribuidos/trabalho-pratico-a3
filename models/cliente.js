@@ -14,7 +14,7 @@ const Cliente = db.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    cpf_cnpj: {
+    cpf: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -53,5 +53,6 @@ const Cliente = db.define(
 );
 
 Cliente.hasMany(Solicitacao);
+Solicitacao.hasOne(Cliente);
 
 export default Cliente;
