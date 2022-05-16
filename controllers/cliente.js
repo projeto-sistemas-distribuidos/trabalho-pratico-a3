@@ -8,6 +8,12 @@ const controller = {
       .then((result) => res.status(200).json(result))
       .catch((err) => res.status(400).json({ error: err.message }));
   },
+  getId(req, res) {
+    clienteRepository
+      .findByPk(req.params.id)
+      .then((result) => res.status(200).json(result))
+      .catch((err) => res.status(400).json({ error: err.message }));
+  },
   postCliente(req, res) {
     const id = uuidv4();
     clienteRepository
