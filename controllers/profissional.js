@@ -16,7 +16,7 @@ const controller = {
       .catch((err) => res.status(400).json({ error: err.message }));
   },
 
-  postProfissional(req, res) {
+  post(req, res) {
     const id = uuidv4();
     profissionalRepository
       .create({
@@ -35,6 +35,26 @@ const controller = {
       .then((result) => res.status(201).json(result))
       .catch((err) => res.status(400).json({ error: err.message }));
   },
+
+  async put(req, res) {
+    const alteracao = {
+      nome: req.body.nome,
+      endereco: req.body.endereco,
+      sexo: req.body.sexo,
+      telefone: req.body.telefone,
+      email: req.body.email,
+      senha: req.body.senha,
+      area_atuacao: req.body.area_atuacao,
+      descricao: req.body.descricao
+    }
+    await profissionalRepository.update(alteracao, {
+      where: {
+        profissional_id: req.params.id
+      }
+    }).then((result) => res.status(200).json(alteracao))
+      .catch((err) => res.status(400).json({ error: err.message }));
+  }
+
 };
 
 export default controller;
