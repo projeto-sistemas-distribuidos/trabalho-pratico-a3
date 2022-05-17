@@ -8,6 +8,7 @@ const routes = (app) => {
     app.route(`/v1${routeName}/profissional/disponivel`).get(controller.getDisponivel);
     app.route(`/v1${routeName}/cliente/:cliente_id`).get(controller.getCliente);
     app.route(`/v1${routeName}`).post(controller.postSolicitacao);
+    app.route(`/v1${routeName}/:solicitacao_id`).delete(controller.deleteSolicitacao);
 }
 
 export default routes;
