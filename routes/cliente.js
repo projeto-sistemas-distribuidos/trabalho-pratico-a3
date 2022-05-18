@@ -11,6 +11,8 @@ const  routes= (app) => {
     app.route(`/v1${routeName}`).post(controllerCliente.post);
     
     app.route(`/v1${routeName}/:id`).put(controllerCliente.put);
+    
+    app.route(`/v1${routeName}/:id`).delete(controllerCliente.delete);
 
 }
 
