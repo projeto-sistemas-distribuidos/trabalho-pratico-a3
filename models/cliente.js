@@ -12,35 +12,27 @@ const Cliente = db.define(
     },
     nome: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
     cpf: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
     endereco: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
     sexo: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
     telefone: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
     idade: {
       type: DataTypes.INTEGER,
-      allowNull: false,
     },
     email: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
     senha: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
   },
   {
