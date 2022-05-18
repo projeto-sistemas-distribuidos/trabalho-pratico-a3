@@ -12,8 +12,8 @@ const  routes= (app) => {
     app.route(`/v1${routeName}`).post(controllerProfissional.post);
 
     app.route(`/v1${routeName}/:id`).put(controllerProfissional.put);
-
     
+    app.route(`/v1${routeName}/:id`).delete(controllerProfissional.delete);
 
 }
 
