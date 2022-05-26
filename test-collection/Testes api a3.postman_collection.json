@@ -114,7 +114,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"cliente_id\": \"cli:dc954e58-d519-40ab-9ba6-ce6fece073c0\",\r\n    \"servico_id\": \"ser:4f73f2da-600c-405e-ba21-fb3694fc283b\"\r\n}",
+					"raw": "{\r\n    \"cliente_id\": \"cli:9559a7c2-fee7-484a-a4ee-38c46b3d0408\",\r\n    \"servico_id\": \"ser:4f73f2da-600c-405e-ba21-fb3694fc283b\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -147,7 +147,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"profissional_id\" : \"pro:e042a9e0-a2b5-4766-9a86-fc23b431879d\",\r\n    \"data\" : \"2022-05-24\",\r\n    \"hora\" : \"15:12\",\r\n    \"solicitacao_id\" : \"sol:5d2bcf92-802d-4bdc-8cb2-89950eafae24\"\r\n\r\n}",
+					"raw": "{\r\n    \"profissional_id\" : \"pro:e042a9e0-a2b5-4766-9a86-fc23b431879d\",\r\n    \"data\" : \"2022-05-22\",\r\n    \"hora\" : \"12:00\",\r\n    \"solicitacao_id\" : \"sol:7c0c4078-fd32-4253-b70b-38f21a6212db\"\r\n\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -155,7 +155,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:4000/v1/agenda",
+					"raw": "http://localhost:4000/v1/agenda/profissional/pro:e042a9e0-a2b5-4766-9a86-fc23b431879d",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -163,7 +163,41 @@
 					"port": "4000",
 					"path": [
 						"v1",
-						"agenda"
+						"agenda",
+						"profissional",
+						"pro:e042a9e0-a2b5-4766-9a86-fc23b431879d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:4000/v1/avaliacao",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"servico_id\": \"ser:4f73f2da-600c-405e-ba21-fb3694fc283b\",\r\n    \"cliente_id\": \"cli:dc954e58-d519-40ab-9ba6-ce6fece073c0\",\r\n    \"profissional_id\": \"pro:e042a9e0-a2b5-4766-9a86-fc23b431879d\",\r\n    \"avaliacao_servico\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/v1/avaliacao",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"v1",
+						"avaliacao"
 					]
 				}
 			},

@@ -2,6 +2,7 @@ import db from "../sql/sequelize.js";
 import { DataTypes } from "sequelize";
 import Solicitacao from "./solicitacao.js";
 import Agenda from "./agenda.js";
+import Avaliacao from "./avaliacao.js";
 
 const Profissional = db.define(
   "profissionais",
@@ -51,8 +52,8 @@ const Profissional = db.define(
   }
 );
 
-
 Solicitacao.belongsTo(Profissional, {foreignKey: "profissional_id"});
 Agenda.belongsTo(Profissional, {foreignKey: "profissional_id"});
+Avaliacao.belongsTo(Profissional, {foreignKey: "profissional_id"});
 
 export default Profissional;

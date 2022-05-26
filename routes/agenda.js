@@ -8,7 +8,7 @@ const routes = (app) => {
 
     app.route(`/v1${routeName}`).post(controllerAgenda.post);
 
-    app.route(`/v1${routeName}/profissional/:profissional_id`).get(controllerAgenda.getProfissional)
+    app.route(`/v1${routeName}/profissional/:profissional_id`).get(controllerAgenda.getProfissional);
 
     app.route(`/v1${routeName}/:solicitacao_id`).patch(controllerAgenda.patch);
 

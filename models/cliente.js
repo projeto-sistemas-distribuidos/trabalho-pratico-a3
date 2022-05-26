@@ -1,6 +1,7 @@
 import db from "../sql/sequelize.js";
 import { DataTypes } from "sequelize";
 import Solicitacao from "./solicitacao.js";
+import Avaliacao from "./avaliacao.js";
 
 const Cliente = db.define(
   "clientes",
@@ -45,5 +46,6 @@ const Cliente = db.define(
 );
 
 Solicitacao.belongsTo(Cliente, {foreignKey: "cliente_id"});
+Avaliacao.belongsTo(Cliente, { foreignKey : "cliente_id"});
 
 export default Cliente;
